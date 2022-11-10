@@ -1,12 +1,12 @@
 <script>
 export default {
-    name: "CaracterCard",
+    name: "CharacterCard",
 }
 </script>
 
 <template>
-    <div class="card d-flex flex-column">
-        <div>test</div>
+    <div class="ms_card d-flex flex-column">
+        <!-- <img :src="" :alt=""> -->
         <div>test</div>
         <div>test</div>
     </div>
@@ -16,12 +16,12 @@ export default {
 <style lang="scss">
 @use "../styles/partials/variables" as *;
 
-.card {
+.ms_card {
     background-color: $bg-color;
     color: $col-white;
 
     // DEBUG
-    width: 90px;
+    width: 100%;
     height: 200px;
 }
 </style>

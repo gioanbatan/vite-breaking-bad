@@ -1,31 +1,40 @@
 <script>
-import CaracterCard from "./CaracterCard.vue";
+import CharacterCard from "./CharacterCard.vue";
 export default {
     name: "AppResults",
     components: {
-        CaracterCard
+        CharacterCard
     }
 }
 
 </script>
 
 <template>
-    <div class="container">
-        <section class="results-container">
-            <div class="found-bar">
-                Found xx chatacters
+    <div class="container mx-auto">
+        <section class="ms_results-container p-5">
+            <div class="ms_found-bar p-3">
+                Found xx characters
             </div>
 
-            <div class="row row-cols-5">
-                <div class="col">
-                    <CaracterCard />
+            <div class="container-fluid">
+                <div class="row row-cols-5 pt-3 pb-3">
+                    <div class="col">
+                        <CharacterCard />
+                    </div>
+                    <div class="col">
+                        <CharacterCard />
+                    </div>
+                    <div class="col">
+                        <CharacterCard />
+                    </div>
+                    <div class="col">
+                        <CharacterCard />
+                    </div>
+                    <div class="col">
+                        <CharacterCard />
+                    </div>
                 </div>
-                <div class="col">
-                    <CaracterCard />
-                </div>
-                <div class="col">
-                    <CaracterCard />
-                </div>
+
             </div>
         </section>
     </div>
@@ -34,15 +43,20 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 
-.results-container {
+.ms_results-container {
     background-color: $col-white;
-    padding: 3rem;
     font-size: 1rem;
     font-weight: 700;
 }
 
-.found-bar {
+.ms_found-bar {
     background-color: $bar-found;
-    padding: 1rem;
+    width: 100%;
+}
+
+.ms_testing {
+    background-color: black;
+    width: 100%;
+    height: 100px;
 }
 </style>

@@ -13,6 +13,12 @@ export default {
     return {
       store
     }
+  },
+  created() {
+    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
+      this.store.character = resp.data;
+      console.log(this.store.character, typeof (this.store.character));
+    })
   }
 }
 
@@ -23,8 +29,7 @@ export default {
   <AppSelectCategory />
   <AppResults />
 
-
-
+  <!-- DEBUG -->
   <div>
     {{ store.test }}
   </div>

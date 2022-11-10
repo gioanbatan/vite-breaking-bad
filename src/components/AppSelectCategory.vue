@@ -6,8 +6,8 @@ export default {
 </script>
 
 <template>
-    <div class="container margin-auto">
-        <div class="category-container">
+    <div class="container mx-auto">
+        <div class="ms_category-container">
             <select id="category">
                 <option value="???">Select category</option>
             </select>
@@ -16,7 +16,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.category-container {
+.ms_category-container {
     padding: 1rem;
 
     select {
