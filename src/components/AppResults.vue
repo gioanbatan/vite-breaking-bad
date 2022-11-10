@@ -23,24 +23,12 @@ export default {
             </div>
 
             <div class="container-fluid">
-                <div class="row row-cols-5 pt-3 pb-3">
-                    <div characterclass=" col">
-                        <CharacterCard />
-                    </div>
-                    <div class="col">
-                        <CharacterCard />
-                    </div>
-                    <div class="col">
-                        <CharacterCard />
-                    </div>
-                    <div class="col">
-                        <CharacterCard />
-                    </div>
-                    <div class="col">
-                        <CharacterCard />
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+                    <div v-for="character in store.characters" :key="character.char_id"
+                        class="col flex-align-items-stretch">
+                        <CharacterCard :character="character" />
                     </div>
                 </div>
-
             </div>
         </section>
     </div>

@@ -25,7 +25,10 @@ export default {
 </script>
 
 <template>
-  <h1>Breaking Bad Api</h1>
+  <img class="ms_b-b-logo"
+    src="../src/assets/img/kisspng-walter-white-television-show-logo-amc-breaking-bad-5abba541179f29.1929777815222469770968.png"
+    alt="Br Ba Breaking Bad logo">
+  <h1 class="d-inline-block align-middle">Breaking Bad Api</h1>
   <AppSelectCategory />
   <AppResults />
 
@@ -39,4 +42,9 @@ export default {
 <style lang="scss">
 @use "./styles/general.scss" as *;
 @use "./styles/partials/variables" as *;
+
+.ms_b-b-logo {
+  width: 50px;
+  height: 50px;
+}
 </style>
