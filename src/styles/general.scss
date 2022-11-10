@@ -1,4 +1,7 @@
+@use "./partials/variables" as *;
+
 @import "node_modules/bootstrap/scss/bootstrap";
+
 
 // RESET
 * {
@@ -7,6 +10,26 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+}
+
+// COMMON
 body {
-    background-color: aqua;
+    background-color: $bg-color;
+    color: $col-white;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+// UTILITES
+.margin-auto {
+    margin: 0 auto;
 }
