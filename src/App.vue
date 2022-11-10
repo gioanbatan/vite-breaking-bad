@@ -3,21 +3,26 @@ import axios from "axios";
 import { store } from "./store";
 import AppSelectCategory from "./components/AppSelectCategory.vue";
 import AppResults from "./components/AppResults.vue";
+import AppLoader from "./components/AppLoader.vue";
 
 export default {
   components: {
     AppSelectCategory,
     AppResults,
+    AppLoader
   },
   data() {
     return {
-      store
+      store,
+      dataIsLoaded: false
     }
   },
   created() {
+    this.dataIsLoaded = false;
     axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
       this.store.characters = resp.data;
       console.log(this.store.characters, typeof (this.store.characters));
+      this.dataIsLoaded = true;
     })
   }
 }
@@ -29,14 +34,13 @@ export default {
     src="../src/assets/img/kisspng-walter-white-television-show-logo-amc-breaking-bad-5abba541179f29.1929777815222469770968.png"
     alt="Br Ba Breaking Bad logo">
   <h1 class="d-inline-block align-middle">Breaking Bad Api</h1>
-  <AppSelectCategory />
-  <AppResults />
-
-  <!-- DEBUG -->
-  <div>
-    {{ store.test }}
+  <div v-if="!dataIsLoaded">
+    <AppLoader />
   </div>
-
+  <div v-else>
+    <AppSelectCategory />
+    <AppResults />
+  </div>
 </template>
 
 <style lang="scss">
