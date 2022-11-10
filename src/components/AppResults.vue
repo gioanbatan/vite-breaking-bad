@@ -1,24 +1,30 @@
 <script>
 import CharacterCard from "./CharacterCard.vue";
+import { store } from "../store";
+
 export default {
     name: "AppResults",
     components: {
         CharacterCard
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
-
 </script>
 
 <template>
     <div class="container mx-auto">
         <section class="ms_results-container p-5">
             <div class="ms_found-bar p-3">
-                Found xx characters
+                Found {{ store.characters.length - 1 }} characters
             </div>
 
             <div class="container-fluid">
                 <div class="row row-cols-5 pt-3 pb-3">
-                    <div class="col">
+                    <div characterclass=" col">
                         <CharacterCard />
                     </div>
                     <div class="col">

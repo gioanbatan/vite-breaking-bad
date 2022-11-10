@@ -16,8 +16,8 @@ export default {
   },
   created() {
     axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.store.character = resp.data;
-      console.log(this.store.character, typeof (this.store.character));
+      this.store.characters = resp.data;
+      console.log(this.store.characters, typeof (this.store.characters));
     })
   }
 }
