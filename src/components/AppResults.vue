@@ -19,7 +19,7 @@ export default {
     <div class="container mx-auto">
         <section class="ms_results-container p-5">
             <div class="ms_found-bar p-3">
-                Found {{ store.characters.length - 1 }} characters
+                Found {{ store.characters.length }} characters
             </div>
 
             <div class="container-fluid">
