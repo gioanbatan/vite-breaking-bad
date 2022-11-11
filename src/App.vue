@@ -24,21 +24,24 @@ export default {
       console.log(this.store.characters, typeof (this.store.characters));
       this.dataIsLoaded = true;
     })
+  },
+  methods: {
+    changeSeries() {
+      if
+    }
   }
 }
 
 </script>
 
 <template>
-  <img class="ms_b-b-logo"
-    src="../src/assets/img/kisspng-walter-white-television-show-logo-amc-breaking-bad-5abba541179f29.1929777815222469770968.png"
-    alt="Br Ba Breaking Bad logo">
+  <img class="ms_b-b-logo" src="./assets/img/logo.png" alt="Br Ba Breaking Bad logo">
   <h1 class="d-inline-block align-middle">Breaking Bad Api</h1>
   <div v-if="!dataIsLoaded">
     <AppLoader />
   </div>
   <div v-else>
-    <AppSelectCategory />
+    <AppSelectCategory @selectSeries="changeSeries" />
     <AppResults />
   </div>
 </template>
@@ -49,6 +52,5 @@ export default {
 
 .ms_b-b-logo {
   width: 50px;
-  height: 50px;
 }
 </style>
