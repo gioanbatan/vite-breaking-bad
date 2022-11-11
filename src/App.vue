@@ -27,7 +27,16 @@ export default {
   },
   methods: {
     changeSeries() {
-      console.log("");
+      console.log("this.store.seriesSelected", typeof (this.store.seriesSelected));
+      let apiString = "https://www.breakingbadapi.com/api/characters";
+      if (this.store.seriesSelected !== "All series") {
+        apiString = `${apiString}?category=${this.store.seriesSelected}`
+      }
+      axios.get(apiString).then((resp) => {
+        this.store.characters = resp.data;
+      });
+      console.log(apiString + "?category=" + this.store.seriesSelected);
+      console.log(this.store.characters, typeof (this.store.characters));
     }
   }
 }

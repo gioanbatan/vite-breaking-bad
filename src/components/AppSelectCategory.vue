@@ -16,7 +16,7 @@ export default {
     <div class="container mx-auto">
         <div class="ms_category-container">
             <select @change="$emit('selectSeries')" id="category" v-model="store.seriesSelected">
-                <option selected value="" disabled>Select category</option>
+                <option selected value="" disabled hidden>Select category</option>
                 <option v-for="(selectedCategory, index) in series" :value="selectedCategory" :key="index">{{
                         selectedCategory
                 }}</option>
