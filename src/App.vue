@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     changeSeries() {
-      if
+      console.log("");
     }
   }
 }
