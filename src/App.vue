@@ -1,9 +1,9 @@
 <script>
 import axios from "axios";
-import { store } from "./store";
 import AppSelectCategory from "./components/AppSelectCategory.vue";
 import AppResults from "./components/AppResults.vue";
 import AppLoader from "./components/AppLoader.vue";
+import { store } from "./store";
 
 export default {
   components: {
@@ -18,15 +18,16 @@ export default {
     }
   },
   created() {
-    this.dataIsLoaded = false;
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.store.characters = resp.data;
-      console.log(this.store.characters, typeof (this.store.characters));
-      this.dataIsLoaded = true;
-    })
+    console.log("So riat!");
+    this.changeSeries();
   },
   methods: {
     changeSeries() {
+      console.log("CHANGESERIES");
+      // Loader screen flag
+      this.dataIsLoaded = false;
+
+      // API call 
       console.log("this.store.seriesSelected", typeof (this.store.seriesSelected));
       let apiString = "https://www.breakingbadapi.com/api/characters";
       if (this.store.seriesSelected !== "All series") {
@@ -34,13 +35,15 @@ export default {
       }
       axios.get(apiString).then((resp) => {
         this.store.characters = resp.data;
+
+        // Loader screen disappaire
+        this.dataIsLoaded = true;
       });
       console.log(apiString + "?category=" + this.store.seriesSelected);
       console.log(this.store.characters, typeof (this.store.characters));
     }
   }
 }
-
 </script>
 
 <template>
